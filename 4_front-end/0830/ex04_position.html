@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.t1{position: static;}
+.t2{position: static; top:100px; left:150px;}
+.t3{position: relative; top:100px;  left:100px;}
+.t4{position: absolute; top:200px;  left:200px;}
+.t5{position: fixed; bottom:300px; left: 300px;}
+</style>
+</head>
+<body>
+	<img src="img/americano.jpg" class="t1" width="100" height="100">
+	<img src="img/cafelatte.jpg" class="t2" width="100" height="100">
+ 	<img src="img/americano.jpg" class="t3" width="100" height="100">
+	<img src="img/cafelatte.jpg" class="t4" width="100" height="100">
+	<img src="img/americano.jpg" class="t5" width="100" height="100">
+</body>
+</html>
+<!--
+위치값 유형지정(position)
+   static(기본값) : 요소순서대로 배치된다. 즉 위치지정이 필요없다
+   absolute : 문서 혹은 상위 요소 내에서 절대 위치에 배치된다
+   relative : 기본 위치(static으로 지정되었을 때의 위치)를 기준으로 좌표 프로퍼티
+            (top, bottom, left, right)를 사용하여 위치를 이동시킨다.
+            static을 선언한 요소와 relative를 선언한 요소의 차이점은 좌표 프로퍼티의 동작 여부뿐이며 
+            그외는 동일하게 동작한다
+   fixed :현재 보이는 브라우저 화면 내에서의 절대 위치에 배치된다
+-->
+
+
+
+
+
+
+
+
+
+
