@@ -1,35 +1,35 @@
 /* 모든 요소의 css 기본 설정 초기화 하기 위한 선택자 */
-____ {
+*{
   margin: 0;
   padding: 0;
   /* 여백 까지 박스 사이즈에 포함 하기  */
-  box-sizing: _________;
+  box-sizing: border-box;
   /* 리스트 요소의 스타일을 없앤다. (기본 : 점) */
-  list-style: _____;
+  list-style: none;
 }
 
 a {
   /* 앵커 태그의 text 스타일을 없앤다. */
-  ________: none;
+  text-decoration-style: none;
   /* 글자색 설정 */
-  _____: whitesmoke;
+  color: whitesmoke;
 }
 
 /* header 태그 안에 CSS 속성 */
-_______ {
+header {
   height: 70px;
   /* 배경색 설정 */
-  _________: #53e3a6;
+  background-color: #53e3a6;
   /* 글자색 설정 */
-  ______: white;
+  color: white;
   line-height: 70px;
   padding: 0px 30px;
 }
 
 /* header의 내용에 들어갈 클래스 선택자. html 파일 참고 */
-_________ {
+.header-nav {
   /* 수평 요소 동적 크기 구성을 위한 css 속성 */
-  display: _____;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -60,7 +60,7 @@ _________ {
 }
 
 /* form 클래스 하위의 input 요소 css 설정을 위한 선택자 */
-_____ _____ {
+.form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
@@ -73,7 +73,7 @@ _____ _____ {
 }
 
 /* form 클래스 하위의 button 요소 css 설정을 위한 선택자 */
-____ ____ {
+.form button {
   margin: 0 0 15px;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
@@ -90,9 +90,9 @@ ____ ____ {
 }
 
 /* form 클래스 하위의 button 의 상태에 따른 css 설정을 위한 선택자 : 마우스 포인터가 해당 요소에 들어오거나 나간 상태, 활성화 된 상태, 포커싱된 상태 */
-_____ _____________,
-_____ _____________,
-_____ _____________ {
+.form button:hover,
+.form button:active,
+.form button:focus {
   background: #50a3a2;
 }
 
@@ -103,7 +103,7 @@ _____ _____________ {
 }
 
 /* from 클래스 하위 message 클래스 하위 앵커 태그 요소 css 선택자 */
-______ ______ _ {
+.form .message a {
   color: green;
   text-decoration: none;
 }
@@ -121,7 +121,7 @@ ______ ______ _ {
 .content-user-list-ul {
   display: flex;
   /* 안의 내용이 밖으로 빠져나가는것을 방지 */
-  flex-wrap: ____;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -136,13 +136,13 @@ ______ ______ _ {
 }
 
 /* footer 태그 안에 CSS 속성 */
-________ {
+footer {
   /* 맨 아래 고정을 위한 설정 */
-  position: ________;
-  bottom: ______;
+  position: relative;
+  bottom: 0;
   /* 배경색과 글자색 */
-  __________: #53e3a6;
-  ______: white;
+  background-color: #53e3a6;
+  color: white;
   width: 100%;
   height: 70px;
   line-height: 70px;
