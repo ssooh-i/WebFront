@@ -5,12 +5,16 @@
     <title>Insert title here</title>
     <script type="text/javascript">
       window.onload = function () {
-        var color = ['orange', 'cyan', 'purple'];
-        var ssafy = document.querySelectorAll('.ssafy');
+        var color = ["orange", "cyan", "purple"];
+        var ssafys = document.querySelectorAll(".ssafy");
 
-        for (var i = 0; i < ssafy.length; i++) {
-          ssafy[i].style.background = color[i];
-        }
+        // for (var i = 0; i < ssafy.length; i++) {
+        //   ssafys[i].style.background = color[i];
+        // }
+
+        ssafys.forEach(function (ssafy, i) {
+          ssafy.style.background = color[i];
+        });
       };
     </script>
   </head>

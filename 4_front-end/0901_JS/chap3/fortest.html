@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function test(){
+      var areas = ["서울", "구미", "광주", "부울경", "대전"];
+      for(var i = 0; i<areas.length; i++){//일반적인 배열 출력
+        console.log(areas[i]);
+      }
+
+      for(var i in areas){
+        console.log(i); // 인덱스번호
+      }
+
+      areas.forEach(function (area){ //배열안의 값 출력
+        console.log(area);
+      });
+    }
+    test();
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>
