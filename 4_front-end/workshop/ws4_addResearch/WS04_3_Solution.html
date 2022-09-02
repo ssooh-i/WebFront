@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/main.css">
-    <script src ="js/cafe.js"></script>
+    <script src="js/cafe_Solution.js"></script>
     <title>SSAFY BOOK CAFE</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
                 <div id="header_nav_confirm_on" style="display: none">
                     <div class="header_nav_menuitem"><a class="nav_link" href="#" onclick="javascript:logout();">로그아웃</a></div>
                     <div class="header_nav_menuitem"><a class="nav_link" href="#">마이페이지</a></div>
-                    <div class="header_nav_menuitem"><a class="nav_link" href="#" onclick="javascript:pollMake();" >관리자</a></div>
+                    <div class="header_nav_menuitem"><a class="nav_link" href="#" onclick="javascript:pollMake();">관리자</a></div>
                 </div>
             </div>
         </nav>
@@ -37,8 +37,8 @@
         <div class="content_left">
         <!-- 프로필 사진 Start  -->
         <div class="profile">
-            <img id="profile_img" src="img/noimg.png" width="120" alt="" />
-            <!--<img class="profile_img" id="profile_img" src="img/profile.png" width="120" alt="" />-->
+            <img id="profile_img" src="img/noimg.png" alt="" />
+            <!-- <img class="profile_img" id="profile_img" src="img/profile.png" width="120" alt="" /> -->
         </div>
         <!-- 프로필 사진 End  -->
 
@@ -88,36 +88,7 @@
         <!--메뉴 End-->
 
         <!-- 설문조사 Start  -->
-        <div class="vote">
-            <div class="vote_title">[ 당신의 선택 ]</div>
-            <div class="vote_question">공부하고 싶은 분야를 골라 주세요!!!</div>
-            <div class="vote_answer">
-                <ul>
-                <li>
-                    <input type="radio" name="vote_answer" vlaue = "파이썬" />
-                    <img src="img/poll/python.png" width="70" alt="" /> Python
-                </li>
-                <li>
-                    <input type="radio" name="vote_answer" vlaue = "HTML5" />
-                    <img src="img/poll/html5.png" width="70" alt="" /> HTML5
-                </li>
-                <li>
-                    <input type="radio" name="vote_answer" vlaue = "Vue.js"/>
-                    <img src="img/poll/vuejs.png" width="70" alt="" /> Vue.js
-                </li>
-                <li>
-                    <input type="radio" name="vote_answer" vlaue = "Java" />
-                    <img src="img/poll/java.png" width="70" alt="" /> Java
-                </li>
-                </ul>
-            </div>
-
-            <div class="vote_button">
-                <button class="button btn_primary" onclick="javascript:poll();" >투표하기</button>
-                <button class="button">결과보기</button>
-            </div>
-            <div class="vote_date">투표기간 : 21.09.01 ~ 21.9.30</div>
-        </div>
+        <div id="vote"></div>
         <!-- 설문조사 End  -->
         </div>
         <!-- 왼쪽 Content End  -->
