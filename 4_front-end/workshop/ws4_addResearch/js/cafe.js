@@ -70,7 +70,7 @@ function slideDown(areaid) {
   }
 }
 
-
+//투표하기
 function poll() { 
   let votes = document.getElementsByName("vote_answer");
   let sel_menu = "";
@@ -87,10 +87,10 @@ function poll() {
 
 //관리자 투표만들기
 function pollMake() {
-  window.open("pollmake.html", "poll", "width=420,height=300,top=300,left=400");
+  window.open("pollmake.html", "poll", "width=600,height=400,top=300,left=400");
 }
 
-//답변 항목 추가-------------------------------------------------
+//답변 추가
 function addAnswer() {
   var listDiv = document.getElementById("poll_answer_list");
 
@@ -116,18 +116,44 @@ function addAnswer() {
 }
 //투표생성----------------------------------------------------------
 function makePoll() {
-  if (!document.querySelector("#question").value) {
+  let sdate = document.querySelector("#start_date").value;   //시작일
+  let edate = document.querySelector("#end_date").value;     //종료일
+  if (!sdate || !edate) {
+      alert("설문 기간 입력하시오");
+      return;
+  }
+
+  let quest = document.querySelector("#question").value;  
+  if (!quest) {
       alert("질문 내용을 입력하시오.");
       return;
   }
 
-  var answers = document.getElementsByName("answer");
-  for (var i = 0; i < answers.length; i++){
-      if (!answers[i].value) {
-          alert("답변 항목에 입력하시오");
+  
+  let answerInput = document.querySelectorAll("input[name='answer']");  //답변항목
+  for (let i = 0; i < answerInput.length; i++){
+      if (!answerInput[i].value) {
+          alert("답변 항목을 입력하시오");
           return;
       }
   }
+
+  let answers = [];
+  for (let i = 0; i < answerInput; i++) {  //답변 배열안에 데이터 넣기
+    answers.push(answerInput[i].value);
+  }
+
+  let polljson = { // 값매칭시켜주기
+    start_date: sdate,
+    end_date: edate,
+    question: quest,
+    answers: answers
+  };
+
+  let poll_json = JSON.stringify(polljson); // JSON 객체를 문자열로 변환
+  localStorage.setItem("poll", poll_json);  //localStorage에 추가
+
   alert("투표를 생성합니다.");
+  opener.document.location.reload();        // 부모창 새로고침
   self.close();
 }

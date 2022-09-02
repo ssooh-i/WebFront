@@ -1,7 +1,7 @@
 window.onload = function () {
     var poll = localStorage.getItem("poll");  // localStorage에서 poll이름의 data얻기
     var pollDiv = document.querySelector("#vote");
-    //localStorage.clear();
+    localStorage.clear();
         
     if (poll) {
         //localStorage에서 얻은 문자열을 JSON객체로 변환
