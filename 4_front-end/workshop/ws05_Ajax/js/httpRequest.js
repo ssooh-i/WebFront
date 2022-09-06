@@ -1,4 +1,4 @@
-function sendRequest(url, params, callback, method) {
+function sendRequest(url, params, callback, method) { // 경로
     // 비동기 요청 처리를 위한 XMLHttpRequest객체 생성(통신객체)
     var httpRequest = new XMLHttpRequest();   
 
@@ -18,12 +18,13 @@ function sendRequest(url, params, callback, method) {
 
     //console.log("method == " + httpMethod + "\turl == " + httpUrl + "\tparam == " + httpParams);
     // open() 함수를 이용하여 method의 종류, 경로, 동기(true)/비동기(false) 여부 설정.
-    httpRequest.open(httpMethod, httpUrl, true);
+    httpRequest.open(httpMethod, httpUrl, false);
     //httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     // httpRequest의 상태에 따라 호출될 callback 함수 지정.
     httpRequest.onreadystatechange = callback;
     //console.log(httpMethod == 'POST' ? httpParams : null);
     // POST일 경우 파라미터를 설정하고, send() 함수를 이용하여 서버에 전송.
     httpRequest.send(httpMethod == "POST" ? httpParams : null);
+    //get 방식이면 httpRequest.send(); 쓰면된다
     return httpRequest;
 }
